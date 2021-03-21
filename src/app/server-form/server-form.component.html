@@ -1,0 +1,28 @@
+<form (ngSubmit)="onSubmit()" #serverForm="ngForm">
+
+    {{diagnostic}}
+
+<div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="name"
+       required
+       [(ngModel)]="model.name" name="name">
+</div>
+<!-- <div class="form-group">
+    <label for="type">Server Type</label>
+    <select class="form-control" id="type" required>
+      <option *ngFor="let t of type" [value]="type">{{t}}</option>
+    </select>
+  </div> -->
+
+<div class="form-group">
+    <label for="power">Power Draw (Amps)</label>
+    <input type="text" class="form-control" id="power"
+       required
+       [(ngModel)]="model.power" name="power">
+
+</div>
+
+<button type="button" class="btn btn-default" (click)="newServer(); serverForm.reset()">Add Server</button>
+
+</form>
