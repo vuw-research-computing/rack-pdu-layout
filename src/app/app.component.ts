@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
-import { Server } from './server';
-import { ServerFormComponent } from './server-form/server-form.component';
+
 import { ServerService } from './server.service';
 
 @Component({
@@ -9,21 +8,24 @@ import { ServerService } from './server.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'Power Calculator';
-
-  servers: Server[];
 
   constructor(private serverService: ServerService) {}
 
-  ngOnInit() {
-    this.getServers();
+  servers;
+
+  // servers = this.serverService.getServers();
+
+  ngOnInit(): void {
+    this.servers = this.serverService.getServers();
+    // this.getServers();
   }
 
-  getServers(): void {
-    this.servers = this.serverService.getServers()
+  // getServers(): void {
+  //   this.servers = this.serverService.getServers()
     
-  }
+  // }
 
   // getServers(): void {
   //   this.servers = this.serverService.getServers();
