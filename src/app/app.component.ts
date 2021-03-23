@@ -19,6 +19,9 @@ export class AppComponent implements OnInit{
 
   servers;
   pdus;
+  placeholder1 = [];
+  placeholder2 = [];
+  placeholder3 = [];
 
   // ngOnInit(): void {
   //   this.servers = this.serverService.getServers();
@@ -42,15 +45,4 @@ export class AppComponent implements OnInit{
   }
 
 }
-
-  // drop(event: CdkDragDrop<string[]>) {
-  //   if (event.previousContainer === event.container) {
-  //     moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
-  //   } else {
-  //     transferArrayItem(event.previousContainer.data,
-  //                       event.container.data,
-  //                       event.previousIndex,
-  //                       event.currentIndex);
-  //   }
-  // }
 
