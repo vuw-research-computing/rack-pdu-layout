@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PdusComponent } from './pdus.component';
+import { PduFormComponent } from './pdu-form.component';
 
-describe('PdusComponent', () => {
-  let component: PdusComponent;
-  let fixture: ComponentFixture<PdusComponent>;
+describe('PduFormComponent', () => {
+  let component: PduFormComponent;
+  let fixture: ComponentFixture<PduFormComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PdusComponent ]
+      declarations: [ PduFormComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PdusComponent);
+    fixture = TestBed.createComponent(PduFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

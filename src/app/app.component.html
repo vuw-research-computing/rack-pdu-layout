@@ -1,5 +1,47 @@
 <h1>{{title}}</h1>
 
+<!-- <div class="grid-container">
+
+  <div>1</div>
+  <div>2</div>
+  <div class="layout1">3</div>
+  <div class="layout2">4</div>
+
+</div> -->
+
+<app-server-form></app-server-form>
+<app-pdu-form></app-pdu-form>
+
+<div cdkDropListGroup>
+
+  <div class="example-container">
+    <h2>Server Pool</h2>
+
+    <div
+      cdkDropList
+      [cdkDropListData]="servers"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      <div class="example-box" *ngFor="let server of servers" cdkDrag>{{server.name}} {{server.power}}</div>
+    </div>
+  </div>
+
+<div class="example-container">
+    <h2>PDUs</h2>
+
+    <div class="container-box" *ngFor="let pdu of pdus">{{pdu.label}} {{pdu.totalpower}}</div>
+
+    <!-- <div
+      cdkDropList
+      [cdkDropListData]="pdus"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      <div class="example-box" *ngFor="let pdu of pdus" cdkDrag>{{pdu.label}} {{pdu.totalpower}}</div>
+    </div> -->
+  </div>
+
+</div>
+
 <!-- <div cdkDropListGroup>
 
 <div class="list-container">
@@ -36,7 +78,7 @@
 </div>
 </div> -->
 
-<div><app-server-form></app-server-form></div>
+
 
 <!-- <button (click)="addNewServer()">Add</button> -->
 <!-- 
@@ -70,18 +112,7 @@
 
 </form> -->
 
-<div cdkDropListGroup>
-  <div class="example-container">
-    <h2>Server Pool</h2>
 
-    <div
-      cdkDropList
-      [cdkDropListData]="servers"
-      class="example-list"
-      (cdkDropListDropped)="drop($event)">
-      <div class="example-box" *ngFor="let server of servers" cdkDrag>{{server.name}} {{server.type}} {{server.power}}</div>
-    </div>
-  </div>
 
   <!-- <div class="example-container">
     <h2>Done</h2>
@@ -105,18 +136,20 @@
       <div class="example-box" *ngFor="let item of third" cdkDrag>{{item}}</div>
     </div>
   </div> -->
-</div>
 
-<!-- <div>
+
+<div>
   <h4>Servers</h4>
   {{servers | json}}
 </div>
+
 
 <div>
   <h4>PDUs</h4>
   {{pdus | json}}
 </div>
 
+<!-- 
 <div>
   <h4>Placeholders</h4>
   {{placeholders | json}}

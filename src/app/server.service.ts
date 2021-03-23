@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 
+import { MOCKSERVERS } from './mock-servers';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -7,9 +9,9 @@ export class ServerService {
 
   constructor() { }
 
-  // serverArray: Server[] = [];
-
   serverArray = [];
+
+  mockServers = MOCKSERVERS;  
 
   addServer(server) {
     this.serverArray.push(server);
@@ -18,6 +20,10 @@ export class ServerService {
 
   getServers() {
     return this.serverArray;
+  }
+
+  getMockServers() {
+    return this.mockServers;
   }
 
 }

@@ -1,0 +1,20 @@
+<form [formGroup]="newpduForm" (ngSubmit)="onSubmit()">
+
+    <div>
+      <label for="label">
+        PDU Label
+      </label>
+      <input id="label" type="text" formControlName="label">
+    </div>
+  
+    <div>
+      <label for="totalpower">
+        Power Available (Amps)
+      </label>
+      <input id="totalpower" type="number" formControlName="totalpower">
+    </div>
+  
+    <button class="button" type="submit">Add PDU</button>
+  
+  </form>
+  

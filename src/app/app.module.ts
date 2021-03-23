@@ -7,11 +7,13 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ServerFormComponent } from './server-form/server-form.component';
+import { PduFormComponent } from './pdu-form/pdu-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ServerFormComponent
+    ServerFormComponent,
+    PduFormComponent
   ],
   imports: [
     BrowserModule,

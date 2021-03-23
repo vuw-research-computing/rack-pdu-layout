@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 
 import { ServerService } from './server.service';
+import { PduService } from './pdu.service';
 
 @Component({
   selector: 'app-root',
@@ -11,54 +12,23 @@ import { ServerService } from './server.service';
 export class AppComponent implements OnInit{
   title = 'Power Calculator';
 
-  constructor(private serverService: ServerService) {}
+  constructor(
+    private serverService: ServerService,
+    private pduService: PduService,
+    ) {}
 
   servers;
+  pdus;
 
-  // servers = this.serverService.getServers();
+  // ngOnInit(): void {
+  //   this.servers = this.serverService.getServers();
+  //   this.pdus = this.pduService.getPdus();
+  // }
 
   ngOnInit(): void {
-    this.servers = this.serverService.getServers();
-    // this.getServers();
+    this.servers = this.serverService.getMockServers();
+    this.pdus = this.pduService.getMockPdus();
   }
-
-  // getServers(): void {
-  //   this.servers = this.serverService.getServers()
-    
-  // }
-
-  // getServers(): void {
-  //   this.servers = this.serverService.getServers();
-  // }
-
-  // ngOnInit() {
-  //   this.getServers();
-  // }
-
-//   todo = [
-//     'Get to work',
-//     'Pick up groceries',
-//     'Go home',
-//     'Fall asleep'
-//   ];
-
-//   done = [
-//     'Get up',
-//     'Brush teeth',
-//     'Take a shower',
-//     'Check e-mail',
-//     'Walk dog'
-//   ];
-
-//   third = [
-
-//   ];
-
-//   testarray = [
-// '1',
-// '2',
-// '3'
-//   ];
 
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
