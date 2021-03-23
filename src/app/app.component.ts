@@ -28,10 +28,15 @@ export class AppComponent implements OnInit{
   //   this.pdus = this.pduService.getPdus();
   // }
 
-  ngOnInit(): void {
-    this.servers = this.serverService.getMockServers();
-    this.pdus = this.pduService.getMockPdus();
+    ngOnInit(): void {
+  this.servers = this.serverService.getMockServers();
+    this.pdus = this.pduService.getPdus();
   }
+
+  // ngOnInit(): void {
+  //   this.servers = this.serverService.getMockServers();
+  //   this.pdus = this.pduService.getMockPdus();
+  // }
 
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {

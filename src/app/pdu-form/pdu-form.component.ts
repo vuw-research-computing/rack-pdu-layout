@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 
 import { PduService } from '../pdu.service';
+import { Pdu } from '../pdu';
+import { Server } from '../server';
 
 @Component({
   selector: 'app-pdu-form',
@@ -20,9 +22,13 @@ export class PduFormComponent {
     totalpower: ''
   });
 
+  placeholder: Server[];
+
   onSubmit(): void {
-    console.warn('New PDU added', this.newpduForm.value);
-    this.pduService.addPdu(this.newpduForm.value);
+    
+    let newpdu = new Pdu(this.newpduForm.value.label, this.newpduForm.value.totalpower, this.placeholder);
+    console.warn('New PDU added', newpdu);
+    this.pduService.addPdu(newpdu);
     this.newpduForm.reset();
   }
 

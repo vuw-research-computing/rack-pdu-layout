@@ -10,7 +10,7 @@
 </div> -->
 
 <app-server-form></app-server-form>
-<!-- <app-pdu-form></app-pdu-form> -->
+<app-pdu-form></app-pdu-form>
 
 <div cdkDropListGroup>
 
@@ -26,13 +26,14 @@
 
   <div class="example-container">
 
-    <div *ngFor="let pdu of pdus; index as i">
-      <h3>{{pdu.label}}</h3>
-      {{i}}
-
-
-
-
+    <div *ngFor="let pdu of pdus">
+      <h3>{{pdu.label}} {{pdu.totalpower}} {{pdu.servercontainer}}</h3>
+      <cdk-drop-list 
+      [cdkDropListData]="pdu.servercontainer"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      <div class="example-box" *ngFor="let item of pdu.servercontainer" cdkDrag>{{item.name}} {{item.power}}</div>
+  </cdk-drop-list>
 
     </div>
 
@@ -65,36 +66,6 @@
 
 </div>
 
-
-<!-- <div class="example-container">
-  <h2>PDUs</h2>
-    <h2>PDU 2 4.5555</h2>
-    <cdk-drop-list 
-    [cdkDropListData]="placeholder1"
-    class="example-list"
-    (cdkDropListDropped)="drop($event)">
-    <div class="example-box" *ngFor="let item of placeholder1" cdkDrag>{{item.name}} {{item.power}}</div>
-</cdk-drop-list>
-
-  <h2>PDU 3 4.5555</h2>
-  <cdk-drop-list
-  [cdkDropListData]="placeholder2"
-  class="example-list"
-  (cdkDropListDropped)="drop($event)">
-  <div class="example-box" *ngFor="let item of placeholder2" cdkDrag>{{item.name}} {{item.power}}</div>
-  </cdk-drop-list>
-
-<h2>PDU 4 4.5555</h2>
-<cdk-drop-list
-[cdkDropListData]="placeholder3"
-class="example-list"
-(cdkDropListDropped)="drop($event)">
-<div class="example-box" *ngFor="let item of placeholder3" cdkDrag>{{item.name}} {{item.power}}</div>
-</cdk-drop-list> -->
-
-
-
-<!-- 
 <div>
   <h4>Servers</h4>
   {{servers | json}}
@@ -103,4 +74,4 @@ class="example-list"
 <div>
   <h4>PDUs</h4>
   {{pdus | json}}
-</div> -->
+</div>
