@@ -26,8 +26,8 @@ export class PduFormComponent {
 
   onSubmit(): void {
     
-    let newpdu = new Pdu(this.newpduForm.value.label, this.newpduForm.value.totalpower, this.placeholder);
-    console.warn('New PDU added', newpdu);
+    let newpdu = new Pdu(this.newpduForm.value.label, this.newpduForm.value.totalpower, this.newpduForm.value.totalpower, this.placeholder);
+    // console.warn('New PDU added', newpdu);
     this.pduService.addPdu(newpdu);
     this.newpduForm.reset();
   }

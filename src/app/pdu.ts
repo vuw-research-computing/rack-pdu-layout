@@ -7,6 +7,7 @@ export class Pdu {
     public label: string,
 //    public size: number,
     public totalpower: number,
+    public poweravail: number,
     public servercontainer: Server[] = []
   ) {}
   }

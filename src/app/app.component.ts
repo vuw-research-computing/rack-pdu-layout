@@ -4,44 +4,65 @@ import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/dr
 import { ServerService } from './server.service';
 import { PduService } from './pdu.service';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   title = 'Power Calculator';
 
   constructor(
     private serverService: ServerService,
     private pduService: PduService,
-    ) {}
+  ) { }
 
   servers;
   pdus;
-  placeholder1 = [];
-  placeholder2 = [];
-  placeholder3 = [];
+
+  initPower() {
+    console.log("initialise");
+    for (let p of this.pdus) {
+//      console.log(p.poweravail);
+      p.poweravail = p.totalpower;
+//      console.log(p.poweravail);
+    }
+  }
+
+  calculatePower() {
+    console.log("calculate");
+    for (let p of this.pdus) {
+      p.poweravail = p.totalpower;
+//      console.log(p.poweravail);
+      for (let s of p.servercontainer) {
+        p.poweravail = (p.poweravail - s.power);
+//        console.log(p.totalpower, p.poweravail, s.power);
+      }
+    }
+  }
 
   // ngOnInit(): void {
   //   this.servers = this.serverService.getServers();
   //   this.pdus = this.pduService.getPdus();
   // }
 
-    ngOnInit(): void {
-  this.servers = this.serverService.getMockServers();
-    this.pdus = this.pduService.getPdus();
-  }
+  // ngOnInit(): void {
+  //   this.servers = this.serverService.getMockServers();
+  //   this.pdus = this.pduService.getPdus();
+  // }
 
   // ngOnInit(): void {
   //   this.servers = this.serverService.getServers();
   //   this.pdus = this.pduService.getMockPdus();
+  //  this.initPower();
   // }
 
-    // ngOnInit(): void {
-  //   this.servers = this.serverService.getMockServers();
-  //   this.pdus = this.pduService.getMockPdus();
-  // }
+  ngOnInit(): void {
+    this.servers = this.serverService.getMockServers();
+    this.pdus = this.pduService.getMockPdus();
+    this.initPower();
+  }
 
 
   drop(event: CdkDragDrop<string[]>) {
@@ -49,10 +70,12 @@ export class AppComponent implements OnInit{
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
       transferArrayItem(event.previousContainer.data,
-                        event.container.data,
-                        event.previousIndex,
-                        event.currentIndex);
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex);
+      this.calculatePower();
     }
+
   }
 
 }

@@ -15,7 +15,7 @@ export class PduService {
 
   addPdu(pdu) {
     this.pduArray.push(pdu);
-    console.log(this.pduArray);
+    // console.log(this.pduArray);
   }
 
   getPdus() {
