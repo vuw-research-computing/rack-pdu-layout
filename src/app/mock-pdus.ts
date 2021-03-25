@@ -1,9 +1,22 @@
 import { Pdu } from './pdu';
 
 export const MOCKPDUS: Pdu[] = [
-  { label: '401', totalpower: 6, poweravail: 0, servercontainer: [] },
-  { label: '402', totalpower: 8, poweravail: 0, servercontainer: [] },
-  { label: '701', totalpower: 10, poweravail: 0, servercontainer: [] },
-  { label: '702', totalpower: 5, poweravail: 0, servercontainer: [] },
-  { label: '703', totalpower: 4, poweravail: 0, servercontainer: [] }
+  { label: 'Rack7-1', totalpower: 16, poweravail: 0, servercontainer: [] },
+  { label: 'Rack7-2', totalpower: 16, poweravail: 0, servercontainer: [] },
+  { label: 'Rack7-3', totalpower: 16, poweravail: 0, servercontainer: [] },
+  { label: 'Rack7-4', totalpower: 6, poweravail: 0, servercontainer: [] },
+  { label: 'Rack7-5', totalpower: 16, poweravail: 0, servercontainer: [] },
+  { label: 'Rack7-6', totalpower: 16, poweravail: 0, servercontainer: [] },
+  { label: 'Rack4-1', totalpower: 16, poweravail: 0, servercontainer: [] },
+  { label: 'Rack4-2', totalpower: 16, poweravail: 0, servercontainer: [] },
+  { label: 'Rack4-3', totalpower: 16, poweravail: 0, servercontainer: [] },
+  { label: 'Rack4-4', totalpower: 16, poweravail: 0, servercontainer: [] },
+  { label: 'Rack4-5', totalpower: 16, poweravail: 0, servercontainer: [] },
+  { label: 'Rack4-6', totalpower: 16, poweravail: 0, servercontainer: [] },
+  { label: 'Rack4-7', totalpower: 16, poweravail: 0, servercontainer: [] },
+  { label: 'Rack4-8', totalpower: 16, poweravail: 0, servercontainer: [] },
+  { label: 'Rack4-9', totalpower: 16, poweravail: 0, servercontainer: [] },
+  { label: 'Rack4-10', totalpower: 6, poweravail: 0, servercontainer: [] },
+  { label: 'Rack4-11', totalpower: 16, poweravail: 0, servercontainer: [] },
+  { label: 'Rack4-12', totalpower: 16, poweravail: 0, servercontainer: [] }
 ];
