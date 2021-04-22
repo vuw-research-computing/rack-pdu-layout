@@ -1,0 +1,6 @@
+﻿server_name,server_type,power_draw,network
+newgpu,A100,3,10
+intelc04,DellThingOld,1.5,1
+intelc10,DellThing,2,10
+NewA C1,DellThing,2,1
+IB highmem,DellSpecialThing,1.5,IB

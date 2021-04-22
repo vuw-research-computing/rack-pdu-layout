@@ -22,6 +22,18 @@ export class AppComponent implements OnInit {
   servers;
   pdus;
 
+  serverFileContent;
+
+  onChange(fileList: FileList): void {
+    let file = fileList[0];
+    let fileReader: FileReader = new FileReader();
+    let self = this;
+    fileReader.onloadend = function(x) {
+      self.serverFileContent = fileReader.result;
+    }
+    fileReader.readAsText(file);
+  }
+
   initPower() {
     console.log("initialise");
     for (let p of this.pdus) {

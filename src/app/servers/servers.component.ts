@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SERVERS } from '../mock-servers';
+import { MOCKSERVERS } from '../mock-servers';
 
 @Component({
   selector: 'app-servers',
@@ -8,7 +8,7 @@ import { SERVERS } from '../mock-servers';
 })
 export class ServersComponent implements OnInit {
 
-  servers = SERVERS;
+  servers = MOCKSERVERS;
 
   constructor() { }
 

@@ -15,15 +15,15 @@ export class ServerFormComponent {
     private formBuilder: FormBuilder,
     ) {}
 
-  newserverForm = this.formBuilder.group({
+  newServerForm = this.formBuilder.group({
     name: '',
-    power: ''
+    power: '',
   });
 
   onSubmit(): void {
-    console.warn('New server added to pool', this.newserverForm.value);
-    this.serverService.addServer(this.newserverForm.value);
-    this.newserverForm.reset();
+    console.warn('New server added to pool', this.newServerForm.value);
+    this.serverService.addServer(this.newServerForm.value);
+    this.newServerForm.reset();
   }
 
 }
