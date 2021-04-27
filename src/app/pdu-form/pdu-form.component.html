@@ -15,8 +15,26 @@
       </label>
       <input id="totalpower" type="number" formControlName="totalpower" class="input-style">
     </div>
+
+    <div>
+      <label for="location">
+        Location (Rack)
+      </label>
+      <input id="location" type="string" formControlName="location" class="input-style">
+    </div>
   
     <button class="button" type="submit">Add PDU</button>
   
   </form>
   
+  <h2>Upload List of PDUs</h2>
+    
+      <div>
+        <label for="upload">
+          Choose a CSV file to upload (add help):
+        </label>
+        <input type="file" id="upload"(change)="onChange($event.target.files)">
+    </div>
+    
+        <div> {{ pduFileContent }} </div>
+

@@ -70,10 +70,10 @@ export class AppComponent implements OnInit {
     }
   }
 
-  // ngOnInit(): void {
-  //   this.servers = this.serverService.getServers();
-  //   this.pdus = this.pduService.getPdus();
-  // }
+  ngOnInit(): void {
+    this.servers = this.serverService.getServers();
+    this.pdus = this.pduService.getPdus();
+  }
 
   // ngOnInit(): void {
   //   this.servers = this.serverService.getMockServers();
@@ -86,12 +86,12 @@ export class AppComponent implements OnInit {
   //  this.initPower();
   // }
 
-  ngOnInit(): void {
-    this.servers = this.serverService.getServers();
-    console.log(this.servers);
-    this.pdus = this.pduService.getMockPdus();
-    this.initPower();
-  }
+  // ngOnInit(): void {
+  //   this.servers = this.serverService.getMockServers();
+  //   console.log(this.servers);
+  //   this.pdus = this.pduService.getMockPdus();
+  //   this.initPower();
+  // }
 
 
   drop(event: CdkDragDrop<string[]>) {
