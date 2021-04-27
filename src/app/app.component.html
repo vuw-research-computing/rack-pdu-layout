@@ -19,7 +19,7 @@
       [cdkDropListData]="servers"
       class="pcalc-list"
       (cdkDropListDropped)="drop($event)">
-      <div class="pcalc-box" *ngFor="let item of servers" cdkDrag>Server: {{item.name}}, Power draw: {{item.power}}A</div>
+      <div class="pcalc-box" *ngFor="let item of servers" cdkDrag>Server: {{item.name}}, Power draw: {{item.power_draw}}A</div>
     </cdk-drop-list>
 </div>
 
@@ -31,7 +31,7 @@
       [cdkDropListData]="pdu.servercontainer"
       class="pcalc-list"
       (cdkDropListDropped)="drop($event)">
-      <div class="pcalc-box" *ngFor="let item of pdu.servercontainer" cdkDrag>Server: {{item.name}}, Power draw: {{item.power}}A</div>
+      <div class="pcalc-box" *ngFor="let item of pdu.servercontainer" cdkDrag>Server: {{item.name}}, Power draw: {{item.power_draw}}A</div>
   </cdk-drop-list>
 
     </div>

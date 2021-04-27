@@ -17,7 +17,9 @@ export class ServerFormComponent {
 
   newServerForm = this.formBuilder.group({
     name: '',
-    power: '',
+    server_type: '',
+    power_draw: '',
+    network: ''
   });
 
   onSubmit(): void {

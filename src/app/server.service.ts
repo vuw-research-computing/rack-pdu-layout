@@ -14,6 +14,7 @@ export class ServerService {
   mockServers = MOCKSERVERS;  
 
   addServer(server) {
+    console.log(server);
     this.serverArray.push(server);
     console.log(this.serverArray);
   }

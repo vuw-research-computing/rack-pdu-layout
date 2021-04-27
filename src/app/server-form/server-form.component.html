@@ -10,10 +10,24 @@
   </div>
 
   <div>
-    <label for="power">
+    <label for="server_type">
+      Server Type
+    </label>
+    <input id="server_type" type="text" formControlName="server_type" class="input-style">
+  </div>
+
+  <div>
+    <label for="power_draw">
       Power Draw (Amps)
     </label>
-    <input id="power" type="number" formControlName="power" class="input-style">
+    <input id="power_draw" type="number" formControlName="power_draw" class="input-style">
+  </div>
+
+  <div>
+    <label for="network">
+      Network Type
+    </label>
+    <input id="network" type="text" formControlName="network" class="input-style">
   </div>
 
   <button class="button" type="submit">Add Server</button>

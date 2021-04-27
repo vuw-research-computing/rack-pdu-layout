@@ -1,10 +1,10 @@
 import { Server } from './server';
 
 export const MOCKSERVERS: Server[] = [
-  { name: 'NewA C1', power: 1 },
-  { name: 'IB high mem', power: 2 },
-  { name: 'New GPU', power: 3 },
-  { name: 'IntelC04', power: 1.5 },
-  { name: 'IntelC10', power: 0.5 }
+  { name: 'NewA C1', server_type: '', power_draw: 1, network: '' },
+  { name: 'IB high mem', server_type: '', power_draw: 2, network: '' },
+  { name: 'New GPU', server_type: '', power_draw: 3, network: '' },
+  { name: 'IntelC04', server_type: '', power_draw: 1.5, network: '' },
+  { name: 'IntelC10', server_type: '', power_draw: 0.5, network: '' }
 ];
 

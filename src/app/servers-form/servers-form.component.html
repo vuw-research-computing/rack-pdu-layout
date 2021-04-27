@@ -1,13 +1,15 @@
 <h2>Upload List of Servers</h2>
 
-<form [formGroup]="newServersForm" (ngSubmit)="onSubmit()">
+<!-- <form [formGroup]="newServersForm" (ngSubmit)="onSubmit($event.target.files)"> -->
   
     <div>
       <label for="upload">
         Choose a CSV file to upload (add help):
       </label>
-      <input type="file" id="upload"></div>
+      <input type="file" id="upload"(change)="onChange($event.target.files)">
+  </div>
+    <!-- <button class="button" type="submit">Add Servers</button> -->
   
-    <button class="button" type="submit">Add Servers</button>
-  
-  </form>
+      <div> {{ serverFileContent }} </div>
+<!-- 
+  </form> -->

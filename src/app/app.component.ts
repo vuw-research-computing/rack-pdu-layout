@@ -22,17 +22,17 @@ export class AppComponent implements OnInit {
   servers;
   pdus;
 
-  serverFileContent;
+  // serverFileContent;
 
-  onChange(fileList: FileList): void {
-    let file = fileList[0];
-    let fileReader: FileReader = new FileReader();
-    let self = this;
-    fileReader.onloadend = function(x) {
-      self.serverFileContent = fileReader.result;
-    }
-    fileReader.readAsText(file);
-  }
+  // onChange(fileList: FileList): void {
+  //   let file = fileList[0];
+  //   let fileReader: FileReader = new FileReader();
+  //   let self = this;
+  //   fileReader.onloadend = function(x) {
+  //     self.serverFileContent = fileReader.result;
+  //   }
+  //   fileReader.readAsText(file);
+  // }
 
   initPower() {
     console.log("initialise");
@@ -62,7 +62,7 @@ export class AppComponent implements OnInit {
 //      console.log(p.poweravail);
       for (let s of p.servercontainer) {
         let frpa = math.fraction(p.poweravail);
-        let frpo = math.fraction(s.power);
+        let frpo = math.fraction(s.power_draw);
 
         p.poweravail = math.subtract(frpa, frpo);
 //        console.log(p.totalpower, p.poweravail, s.power);
@@ -87,7 +87,8 @@ export class AppComponent implements OnInit {
   // }
 
   ngOnInit(): void {
-    this.servers = this.serverService.getMockServers();
+    this.servers = this.serverService.getServers();
+    console.log(this.servers);
     this.pdus = this.pduService.getMockPdus();
     this.initPower();
   }
