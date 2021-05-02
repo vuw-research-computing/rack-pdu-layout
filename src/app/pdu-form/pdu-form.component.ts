@@ -4,6 +4,7 @@ import { FormBuilder } from '@angular/forms';
 import { PduService } from '../pdu.service';
 import { Pdu } from '../pdu';
 import { Server } from '../server';
+import { LocationStrategy } from '@angular/common';
 
 @Component({
   selector: 'app-pdu-form',
@@ -49,6 +50,7 @@ export class PduFormComponent {
         var newPdu = {label: pduInfo[0], totalpower: parseFloat(pduInfo[1]), poweravail: parseFloat(pduInfo[1]), location: pduInfo[2], servercontainer: []}
         console.log(newPdu);
         self.pduService.addPdu(newPdu);
+
       }
     });
 

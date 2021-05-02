@@ -22,44 +22,19 @@ export class AppComponent implements OnInit {
   servers;
   pdus;
 
-  // serverFileContent;
-
-  // onChange(fileList: FileList): void {
-  //   let file = fileList[0];
-  //   let fileReader: FileReader = new FileReader();
-  //   let self = this;
-  //   fileReader.onloadend = function(x) {
-  //     self.serverFileContent = fileReader.result;
-  //   }
-  //   fileReader.readAsText(file);
-  // }
+  MOCKRACKS: string[] = [ 'rack4', 'rack7' ];
 
   initPower() {
     console.log("initialise");
     for (let p of this.pdus) {
-//      console.log(p.poweravail);
       p.poweravail = p.totalpower;
-//      console.log(p.poweravail);
     }
   }
-
-//   calculatePower() {
-//     console.log("calculate");
-//     for (let p of this.pdus) {
-//       p.poweravail = p.totalpower;
-// //      console.log(p.poweravail);
-//       for (let s of p.servercontainer) {
-//         p.poweravail = (p.poweravail - s.power);
-// //        console.log(p.totalpower, p.poweravail, s.power);
-//       }
-//     }
-//   }
 
   calculatePowerMathjs() {
     console.log("calculatemjs");
     for (let p of this.pdus) {
       p.poweravail = p.totalpower;
-//      console.log(p.poweravail);
       for (let s of p.servercontainer) {
         let frpa = math.fraction(p.poweravail);
         let frpo = math.fraction(s.power_draw);
@@ -92,7 +67,6 @@ export class AppComponent implements OnInit {
   //   this.pdus = this.pduService.getMockPdus();
   //   this.initPower();
   // }
-
 
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {

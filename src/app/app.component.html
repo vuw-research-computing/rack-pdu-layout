@@ -1,50 +1,57 @@
 <div class="body">
 
-<h1>{{title}}</h1>
+  <h1>{{title}}</h1>
 
-<div class="form-container">
-<app-server-form></app-server-form>
-</div>
+  <div class="form-container">
+    <app-server-form></app-server-form>
+  </div>
 
-<div class="form-container">
-<app-pdu-form></app-pdu-form>
-</div>
+  <div class="form-container">
+    <app-pdu-form></app-pdu-form>
+  </div>
 
-<div cdkDropListGroup>
+  <div cdkDropListGroup>
 
-  <div class="pcalc-container">
-    <h2>Server Pool</h2>
-    <cdk-drop-list
-      [cdkDropListData]="servers"
-      class="pcalc-list"
-      (cdkDropListDropped)="drop($event)">
-      <div class="pcalc-box" *ngFor="let item of servers" cdkDrag>Server: {{item.name}}, Power draw: {{item.power_draw}}A</div>
-    </cdk-drop-list>
-</div>
+    <div class="pcalc-container">
+      <h2>Server Pool</h2>
+      <cdk-drop-list [cdkDropListData]="servers" class="pcalc-list" (cdkDropListDropped)="drop($event)">
+        <div class="pcalc-box" *ngFor="let item of servers" cdkDrag>Server: {{item.name}}, Power draw:
+          {{item.power_draw}}A</div>
+      </cdk-drop-list>
+    </div>
 
-  <div class="pcalc-container">
-    <h2>Power Distribution Units:</h2>
-    <div *ngFor="let pdu of pdus">
-      <h3>PDU: {{pdu.label}} Total power: {{pdu.totalpower}}A, Power Available: {{pdu.poweravail}}A</h3>
-      <cdk-drop-list 
-      [cdkDropListData]="pdu.servercontainer"
-      class="pcalc-list"
-      (cdkDropListDropped)="drop($event)">
-      <div class="pcalc-box" *ngFor="let item of pdu.servercontainer" cdkDrag>Server: {{item.name}}, Power draw: {{item.power_draw}}A</div>
-  </cdk-drop-list>
+    <div class="pcalc-container">
+      <h2>Power Distribution Units:</h2>
+      <div *ngFor="let rack of MOCKRACKS">
+        <h2> {{rack}} </h2>
+        <div *ngFor="let pdu of pdus">
+          <div *ngIf="pdu.location == rack">Content to render when condition is true.
+            <h3>PDU: {{pdu.label}} Total power: {{pdu.totalpower}}A, Power Available: {{pdu.poweravail}}A</h3>
+            <cdk-drop-list [cdkDropListData]="pdu.servercontainer" class="pcalc-list"
+              (cdkDropListDropped)="drop($event)">
+              <div class="pcalc-box" *ngFor="let item of pdu.servercontainer" cdkDrag>Server: {{item.name}}, Power draw:
+                {{item.power_draw}}A</div>
+            </cdk-drop-list>
+          </div>
+        </div>
+      </div>
 
     </div>
 
-</div>
+    <div>
+      <h4>Servers</h4>
+      {{servers | json}}
+    </div>
 
-<div>
-  <h4>Servers</h4>
-  {{servers | json}}
-</div>
+    <div>
+      <h4>RACKS</h4>
+      {{ MOCKRACKS[0] }}
+      {{ MOCKRACKS[1] }}
+    </div>
 
-<div>
-  <h4>PDUs</h4>
-  {{pdus | json}}
-</div>
+    <div>
+      <h4>PDUs</h4>
+      {{pdus | json}}
+    </div>
 
-</div>
+  </div>
