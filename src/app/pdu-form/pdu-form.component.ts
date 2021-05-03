@@ -34,6 +34,7 @@ export class PduFormComponent {
     let newpdu = new Pdu(this.newpduForm.value.label, this.newpduForm.value.totalpower, this.newpduForm.value.totalpower, this.newpduForm.value.location, this.placeholder);
     // console.warn('New PDU added', newpdu);
     this.pduService.addPdu(newpdu);
+    this.rackService.addRack(this.newpduForm.value.location);
     this.newpduForm.reset();
   }
 
@@ -51,8 +52,6 @@ export class PduFormComponent {
         if (line.length > 0) {
         var pduInfo = line.split(',');
         var newPdu = {label: pduInfo[0], totalpower: parseFloat(pduInfo[1]), poweravail: parseFloat(pduInfo[1]), location: pduInfo[2], servercontainer: []}
-        //console.log(newPdu);
-        //console.log(pduInfo[2]);
         self.pduService.addPdu(newPdu);
         self.rackService.addRack(pduInfo[2]);
       }
