@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 
 import { PduService } from '../pdu.service';
+import { RackService } from '../rack.service';
 import { Pdu } from '../pdu';
+import { Rack } from '../rack';
 import { Server } from '../server';
 import { LocationStrategy } from '@angular/common';
 
@@ -15,6 +17,7 @@ export class PduFormComponent {
 
   constructor(
     private pduService: PduService,
+    private rackService: RackService,
     private formBuilder: FormBuilder,
   ) { }
 
@@ -48,9 +51,10 @@ export class PduFormComponent {
         if (line.length > 0) {
         var pduInfo = line.split(',');
         var newPdu = {label: pduInfo[0], totalpower: parseFloat(pduInfo[1]), poweravail: parseFloat(pduInfo[1]), location: pduInfo[2], servercontainer: []}
-        console.log(newPdu);
+        //console.log(newPdu);
+        //console.log(pduInfo[2]);
         self.pduService.addPdu(newPdu);
-
+        self.rackService.addRack(pduInfo[2]);
       }
     });
 

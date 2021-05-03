@@ -22,10 +22,10 @@
 
     <div class="pcalc-container">
       <h2>Power Distribution Units:</h2>
-      <div *ngFor="let rack of MOCKRACKS">
+      <div *ngFor="let rack of racks">
         <h2> {{rack}} </h2>
         <div *ngFor="let pdu of pdus">
-          <div *ngIf="pdu.location == rack">Content to render when condition is true.
+          <div *ngIf="pdu.location == rack">
             <h3>PDU: {{pdu.label}} Total power: {{pdu.totalpower}}A, Power Available: {{pdu.poweravail}}A</h3>
             <cdk-drop-list [cdkDropListData]="pdu.servercontainer" class="pcalc-list"
               (cdkDropListDropped)="drop($event)">
@@ -38,20 +38,19 @@
 
     </div>
 
-    <div>
+    <!-- <div>
       <h4>Servers</h4>
       {{servers | json}}
     </div>
 
     <div>
       <h4>RACKS</h4>
-      {{ MOCKRACKS[0] }}
-      {{ MOCKRACKS[1] }}
+      {{racks | json }}
     </div>
 
     <div>
       <h4>PDUs</h4>
       {{pdus | json}}
-    </div>
+    </div> -->
 
   </div>
