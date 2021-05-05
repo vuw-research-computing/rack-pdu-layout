@@ -1,0 +1,25 @@
+[
+{
+"label":"7_1",
+"totalpower":16,
+"poweravail":{"mathjs":"Fraction","n":2167,"d":500},
+"location":"rack7",
+"servercontainer":
+	[
+	{
+	"name":"itl01b",
+	"server_type":"Intel",
+	"power_draw":5.833,
+	"network":"0"
+	},
+	{
+	"name":"itl01a",
+	"server_type":"Intel",
+	"power_draw":5.833,
+	"network":"2"
+	}
+	]
+},
+
+{"label":"7_2","totalpower":16,"poweravail":16,"location":"rack7","servercontainer":[]},{"label":"7_3","totalpower":16,"poweravail":16,"location":"rack7","servercontainer":[]},{"label":"7_4","totalpower":16,"poweravail":16,"location":"rack7","servercontainer":[]},{"label":"7_5","totalpower":16,"poweravail":16,"location":"rack7","servercontainer":[]},{"label":"7_6","totalpower":16,"poweravail":16,"location":"rack7","servercontainer":[]},{"label":"8_1","totalpower":16,"poweravail":16,"location":"rack8","servercontainer":[]},{"label":"8_2","totalpower":16,"poweravail":16,"location":"rack8","servercontainer":[]},{"label":"8_3","totalpower":16,"poweravail":16,"location":"rack8","servercontainer":[]},{"label":"8_4","totalpower":16,"poweravail":16,"location":"rack8","servercontainer":[]},{"label":"8_5","totalpower":16,"poweravail":16,"location":"rack8","servercontainer":[]},{"label":"8_6","totalpower":16,"poweravail":16,"location":"rack8","servercontainer":[]}]
+

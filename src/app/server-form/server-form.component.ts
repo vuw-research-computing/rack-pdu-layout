@@ -24,7 +24,7 @@ export class ServerFormComponent {
   });
 
   onSubmit(): void {
-    console.warn('New server added to pool', this.newServerForm.value);
+    //console.warn('New server added to pool', this.newServerForm.value);
     this.serverService.addServer(this.newServerForm.value);
     this.newServerForm.reset();
   }
@@ -43,7 +43,7 @@ export class ServerFormComponent {
         if (line.length > 0) {
         var serverInfo = line.split(',');
         var newServer = {name: serverInfo[0], server_type: serverInfo[1], power_draw: parseFloat(serverInfo[2]), network: serverInfo[3]}
-        console.log(newServer);
+        //console.log(newServer);
         self.serverService.addServer(newServer);
       }
     });

@@ -17,7 +17,7 @@ export class RackService {
   }
 
   getRacks() {
-    console.log(this.rackSet);
+    //console.log(this.rackSet);
     return this.rackSet;
   }
 

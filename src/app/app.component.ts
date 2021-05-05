@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
   constructor(
     private serverService: ServerService,
     private pduService: PduService,
-    private rackService: RackService,
+    private rackService: RackService
   ) { }
 
   servers;
@@ -27,14 +27,14 @@ export class AppComponent implements OnInit {
   //MOCKRACKS: string[] = [ 'rack4', 'rack7' ];
 
   initPower() {
-    console.log("initialise");
+    //console.log("initialise");
     for (let p of this.pdus) {
       p.poweravail = p.totalpower;
     }
   }
 
   calculatePowerMathjs() {
-    console.log("calculatemjs");
+    //console.log("calculatemjs");
     for (let p of this.pdus) {
       p.poweravail = p.totalpower;
       for (let s of p.servercontainer) {
@@ -49,10 +49,10 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.servers = this.serverService.getServers();
-    console.log(this.pduService.getPdus());
+    //console.log(this.pduService.getPdus());
     this.pdus = this.pduService.getPdus();
     this.racks = this.rackService.getRacks();
-    console.log(this.racks);
+    //console.log(this.racks);
   }
 
   // ngOnInit(): void {
