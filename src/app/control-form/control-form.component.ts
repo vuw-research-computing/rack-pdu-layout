@@ -15,16 +15,14 @@ export class ControlFormComponent implements OnInit {
 
 
   formatForOutput(): string {
-    //   var tempoutputstring;
-    console.log("testing trigger");
     var csvstring = '';
     let templayout = this.pduService.getPdus();
     for (let i = 0; i < templayout.length; i++) {
       //      csvstring += '"' + templayout[i].label + ',' + templayout[i].location + '"\n';
-      console.log(templayout[i].servercontainer.length);
+      //console.log(templayout[i].servercontainer.length);
       for (let j = 0; j < templayout[i].servercontainer.length; j++) {
-        csvstring += templayout[i].label + ',' + templayout[i].location + ',' + templayout[i].servercontainer[j].name + '\n';
-        console.log(csvstring);
+        csvstring += '"' + templayout[i].label + '","' + templayout[i].location + '","' + templayout[i].servercontainer[j].name + '"\n';
+        //console.log(csvstring);
       }
     }
     return csvstring;
@@ -49,7 +47,6 @@ export class ControlFormComponent implements OnInit {
   onReset(): void {
     location.reload();
   }
-
 
   ngOnInit(): void {
     this.tempoutput = this.pduService.getPdus();
