@@ -14,27 +14,30 @@ export class ControlFormComponent implements OnInit {
   tempoutput;
 
 
-  formatForOutput(): void {
- //   var tempoutputstring;
+  formatForOutput(): string {
+    //   var tempoutputstring;
     console.log("testing trigger");
     var csvstring = '';
     let templayout = this.pduService.getPdus();
-    for (let t = 0; t < templayout.length; t++) {
-      csvstring += '"' + templayout[t].label + ',' + templayout[t].location + '"\n';
-      console.log(csvstring);
+    for (let i = 0; i < templayout.length; i++) {
+      //      csvstring += '"' + templayout[i].label + ',' + templayout[i].location + '"\n';
+      console.log(templayout[i].servercontainer.length);
+      for (let j = 0; j < templayout[i].servercontainer.length; j++) {
+        csvstring += templayout[i].label + ',' + templayout[i].location + ',' + templayout[i].servercontainer[j].name + '\n';
+        console.log(csvstring);
+      }
     }
+    return csvstring;
     //console.log(templayout);
   }
-
 
   onExport(): void {
     let timeStamp = new Date();
     let fName = 'pcalc_export_' + timeStamp.toLocaleDateString();
-    let hw = JSON.stringify(this.pduService.getPdus());
+    let hw = this.formatForOutput();
+    //let hw = JSON.stringify(this.pduService.getPdus());
     let fData = new Blob([hw], { type: 'text/csv' });
     let fUrl = URL.createObjectURL(fData);
-
-    this.formatForOutput();
 
     let hiddenElement = document.createElement('a');
     hiddenElement.href = fUrl;
