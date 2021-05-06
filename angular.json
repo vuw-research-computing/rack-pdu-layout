@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "pcalc": {
+    "rack-pdu-layout": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/pcalc",
+            "outputPath": "dist",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "pcalc:build"
+            "browserTarget": "rack-pdu-layout:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "pcalc:build:production"
+              "browserTarget": "rack-pdu-layout:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "pcalc:build"
+            "browserTarget": "rack-pdu-layout:build"
           }
         },
         "test": {
@@ -111,11 +111,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "pcalc:serve"
+            "devServerTarget": "rack-pdu-layout:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "pcalc:serve:production"
+              "devServerTarget": "rack-pdu-layout:serve:production"
             }
           }
         },
@@ -126,5 +126,5 @@
       }
     }
   },
-  "defaultProject": "pcalc"
+  "defaultProject": "rack-pdu-layout"
 }

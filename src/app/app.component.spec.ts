@@ -16,16 +16,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'pcalc'`, () => {
+  it(`should have as title 'rack-pdu-layout'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('pcalc');
+    expect(app.title).toEqual('rack-pdu-layout');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('pcalc app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('rack-pdu-layout app is running!');
   });
 });
