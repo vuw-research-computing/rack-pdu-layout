@@ -1,0 +1,7 @@
+npm install -g angular-cli-ghpages
+
+Edit angular.json file and change "outputPath": "dist/rack-pdu-layout", to "outputPath": "dist",
+
+ng build --prod --base-href https://vuw-research-computing.github.io/rack-pdu-layout/
+
+ngh -no-silent
