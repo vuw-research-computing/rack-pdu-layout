@@ -12,7 +12,7 @@ import { RackService } from './rack.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'Power Calculator';
+  title = 'Rack PDU Layout tool';
 
   constructor(
     private serverService: ServerService,
