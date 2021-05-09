@@ -31,7 +31,11 @@
     
       <div>
         <label for="upload">
-          Choose a CSV file to upload (add help):
+          Choose a CSV file to upload. Use the following format:
+          <div class="csvhelp">
+            pdu_label,power_available_amps,location_rack<br/>
+            e.g. 7_1,16,rack7
+          </div>
         </label>
         <input type="file" id="upload"(change)="onChange($event.target.files)">
     </div>

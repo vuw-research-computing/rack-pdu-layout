@@ -38,7 +38,11 @@
   
     <div>
       <label for="upload">
-        Choose a CSV file to upload (add help):
+        Choose a CSV file to upload (add help): Use the following format:
+        <div class="csvhelp">
+          server_name,server_type,power_amps,u_size<br/>
+            e.g. itl01a,Intel,5.833,2
+        </div>
       </label>
       <input type="file" id="upload"(change)="onChange($event.target.files)">
   </div>

@@ -10,3 +10,7 @@ button {
     margin-top: 5px;
     margin-bottom: 5px;
 }
+
+.csvhelp {
+    font-family:'Courier New', Courier, monospace;
+}
